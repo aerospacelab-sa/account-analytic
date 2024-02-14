@@ -19,7 +19,7 @@ class PurchaseOrderLine(models.Model):
         return res
 
     def _prepare_stock_moves(self, picking):
-        res = super(PurchaseOrderLine, self)._prepare_stock_moves(picking)
+        res = super()._prepare_stock_moves(picking)
         if not self.analytic_distribution:
             return res
         for line in res:
